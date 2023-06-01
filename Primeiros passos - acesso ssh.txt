@@ -1,0 +1,149 @@
+# Instalação
+
+apt-get install git
+
+# Primeiro commit (HOST)
+
+git init
+echo "# gititnow" >> README.md
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/hgmachine/gititnow.git
+
+# acesso SSH (HOST)
+
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh-keygen -t rsa -b 4096 -C "hgmoura@yahoo.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/hgmachine/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/hgmachine/.ssh/id_rsa
+Your public key has been saved in /home/hgmachine/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:8vTb10nxLWyJ1+7Pe0YZJwfqoFLAYVi+ZBjeeJl4Zd8 hgmoura@yahoo.com
+The key's randomart image is:
++---[RSA 4096]----+
+|    .++.o        |
+|   ..Oo= . .  .  |
+|    = X.  . E. . |
+|     = .. . . .oo|
+|      o.S. o o =B|
+|      .+..  o *o=|
+|       .. .  o.=.|
+|           o  .o=|
+|          . .. +B|
++----[SHA256]-----+
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh-agent -s
+SSH_AUTH_SOCK=/tmp/ssh-XXXXXX4dcxcu/agent.6617; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=6618; export SSH_AGENT_PID;
+echo Agent pid 6618;
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh-add ~/.ssh/id_rsa
+Identity added: /home/hgmachine/.ssh/id_rsa (hgmoura@yahoo.com)
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ clip < ~/.ssh/id_rsa.pub
+Comando 'clip' não encontrado, mas poder ser instalado com:
+sudo apt install geomview
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ sudo apt install geomview
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+Os pacotes adicionais seguintes serão instalados:
+  libgeomview-1.9.5 libmotif-common libxm4
+Os NOVOS pacotes a seguir serão instalados:
+  geomview libgeomview-1.9.5 libmotif-common libxm4
+0 pacotes atualizados, 4 pacotes novos instalados, 0 a serem removidos e 58 não atualizados.
+É preciso baixar 4.886 kB de arquivos.
+Depois desta operação, 12,3 MB adicionais de espaço em disco serão usados.
+Você quer continuar? [S/n] S
+Obter:1 http://br.archive.ubuntu.com/ubuntu jammy/universe amd64 libmotif-common all 2.3.8-3 [11,0 kB]
+Obter:2 http://br.archive.ubuntu.com/ubuntu jammy/universe amd64 libxm4 amd64 2.3.8-3 [1.001 kB]
+Obter:3 http://br.archive.ubuntu.com/ubuntu jammy/universe amd64 libgeomview-1.9.5 amd64 1.9.5-3build1 [444 kB]
+Obter:4 http://br.archive.ubuntu.com/ubuntu jammy/universe amd64 geomview amd64 1.9.5-3build1 [3.430 kB]
+Baixados 4.886 kB em 11s (433 kB/s)                                                                                                                                                                       
+A seleccionar pacote anteriormente não seleccionado libmotif-common.
+(Lendo banco de dados ... 282572 ficheiros e directórios actualmente instalados.)
+A preparar para desempacotar .../libmotif-common_2.3.8-3_all.deb ...
+A descompactar libmotif-common (2.3.8-3) ...
+A seleccionar pacote anteriormente não seleccionado libxm4:amd64.
+A preparar para desempacotar .../libxm4_2.3.8-3_amd64.deb ...
+A descompactar libxm4:amd64 (2.3.8-3) ...
+A seleccionar pacote anteriormente não seleccionado libgeomview-1.9.5.
+A preparar para desempacotar .../libgeomview-1.9.5_1.9.5-3build1_amd64.deb ...
+A descompactar libgeomview-1.9.5 (1.9.5-3build1) ...
+A seleccionar pacote anteriormente não seleccionado geomview.
+A preparar para desempacotar .../geomview_1.9.5-3build1_amd64.deb ...
+A descompactar geomview (1.9.5-3build1) ...
+Configurando libmotif-common (2.3.8-3) ...
+Configurando libgeomview-1.9.5 (1.9.5-3build1) ...
+Configurando libxm4:amd64 (2.3.8-3) ...
+Configurando geomview (1.9.5-3build1) ...
+A processar 'triggers' para mailcap (3.70+nmu1ubuntu1) ...
+A processar 'triggers' para desktop-file-utils (0.26-1ubuntu3) ...
+A processar 'triggers' para gnome-menus (3.36.0-1ubuntu3) ...
+A processar 'triggers' para libc-bin (2.35-0ubuntu3.1) ...
+A processar 'triggers' para man-db (2.10.2-1) ...
+A processar 'triggers' para install-info (6.8-4build1) ...
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ clip < ~/.ssh/id_rsa.pub
+Usage: clip [-v axisx,y,z,...] [-g value] [-l value] [-s nslices[,fraction]]
+	[-sph centerx,y,z,...] [-cyl centerx,y,z,...] [-e] [file.oogl]
+Reads an OOGL object from file.oogl (or stdin if omitted).
+Slices it against a (series of) planes whose normal vectors are given
+    by the -v argument (default 1,0,0,0,...).
+Given -g, selects portions where <point> dot <vector> > <pvalue>.
+Given -l, selects portions where <point> dot <vector> < <nvalue>.
+Given both, takes the portion lying between those two values.
+With -s, emits a series of slices spaced <spacing> units apart.
+With -e, emits just two numbers instead of geometry: range of function-values
+    which the object spans.
+-sph : Slice against a sphere, not a plane.  -g/-l gives radius.
+-cyl x,y,z... : Slice against a cylinder whose axis passes through x,y,z...
+	-v gives axis direction, -g/-l radius.
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ clip < /home/hgmachine/.ssh/id_rsa.pub
+Usage: clip [-v axisx,y,z,...] [-g value] [-l value] [-s nslices[,fraction]]
+	[-sph centerx,y,z,...] [-cyl centerx,y,z,...] [-e] [file.oogl]
+Reads an OOGL object from file.oogl (or stdin if omitted).
+Slices it against a (series of) planes whose normal vectors are given
+    by the -v argument (default 1,0,0,0,...).
+Given -g, selects portions where <point> dot <vector> > <pvalue>.
+Given -l, selects portions where <point> dot <vector> < <nvalue>.
+Given both, takes the portion lying between those two values.
+With -s, emits a series of slices spaced <spacing> units apart.
+With -e, emits just two numbers instead of geometry: range of function-values
+    which the object spans.
+-sph : Slice against a sphere, not a plane.  -g/-l gives radius.
+-cyl x,y,z... : Slice against a cylinder whose axis passes through x,y,z...
+	-v gives axis direction, -g/-l radius.
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ cat /home/hgmachine/.ssh/id_rsa.pub
+ssh-rsa AAAAB3zaC1yc2EAAAADAQABAAACAQDu2VOzMpk8878339845cBfJ4S51OLVdWmIjV+OOy8cGRxkHr0mb9Er31qAMXyfB3KX4Y0ousppYD3njXAg7ZeOZ5TND/y8iDPkFcUZsQPqc68KVKLSvnVPXM8G5MrHq+Zo301JyMfNlzYkO/xe2uCb2Q2l5DiW9oVgHw6n9QJkpbmOQVOMQZrO8+ub+dYstgXtXSB8qlC1KubVUT/hoTvQLFvzWx00F85oaZw23ZiqamMtGtGOvXCu/4NWmO/Qp4Dneeu1e1RiNzITNKhztjb4hOmxt2T+iJLNPqkwA2jjiZAIMuPePsfLhgujoOyT38ac4gjd6uHFuCnefYLTdnqhViZ99BGCw4xC7w5u4P+Mtqj1nvz0rGHlv6JFiq3c5sDO+4eT14pqTk7OOMjlGnt0rJGPkhuA/wh/izeZgRYUj0jDn2xr+ijx3xlaqMe3qHGyOGf6jbvDEp/gngQdzqK/QoyBU9ou2bKTnjYBVjNEA3q736zNkix9VsZWtqRKtlCAS2fdXg8u0Z8ncYkmzlkMsvanwgtVrjHzeL4fhtCk41uA5lCmjHAlNazI5FT4vHLQcTWsUz3qLIDVE7kpnFVg7eq0DuTFRDJfURBe+lxdi5TZMfEq6jDET8yVX/BAIhoRQn8KgVValN3VTut3fTTUsc5p4dulVbxxwd2bWdZ48w== hgmoura@yahoo.com
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh -T git@github.com
+Hi hgmachine! You've successfully authenticated, but GitHub does not provide shell access.
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ git push -u origin main
+Username for 'https://github.com': hgmachine
+Password for 'https://hgmachine@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/hgmachine/gititnow.git/'
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh -T -p 443 git@ssh.github.com
+The authenticity of host '[ssh.github.com]:443 ([20.201.28.152]:443)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[ssh.github.com]:443' (ED25519) to the list of known hosts.
+Hi hgmachine! You've successfully authenticated, but GitHub does not provide shell access.
+
+Continuando...
+
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ ssh -T -p 443 git@ssh.github.com
+Hi hgmachine! You've successfully authenticated, but GitHub does not provide shell access.
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ git remote set-url origin git@github.com:hgmachine/gititnow.git
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:hgmachine/gititnow.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+(base) hgmachine@hgmachine-IdeaPad-Gaming-3-15IHU6:~/Documentos/Sistemas embarcados/Gitlearning$ vim Primeiros passos - acesso ssh.txt
+
